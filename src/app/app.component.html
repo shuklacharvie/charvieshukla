@@ -1,0 +1,21 @@
+<h1>Charvie Shukla</h1>
+
+<p><b>Wecome to my revolutionary <em>Number Adding App</em>!</b></p>
+
+
+<ng-container *ngIf="!(this.num1.value && this.num2.value); else happy">
+  <p style="color: red;"><b>Please enter the numbers</b> 😠</p>
+</ng-container>
+<ng-template #happy>
+  <p>😊</p>
+</ng-template>
+
+
+
+<input type="number" [formControl]="num1">  + <input type="number" [formControl]="num2">
+
+<ng-container *ngIf="this.num1.value && this.num2.value">
+  = <span style="color: green;">{{ num1.value + num2.value }}</span>
+</ng-container>
+
+
